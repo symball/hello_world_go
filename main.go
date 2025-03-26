@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -18,9 +19,14 @@ func main() {
 			"secret": "AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGewQe",
 		})
 	})
+	r.GET("/test-duplicate", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"secret": "AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGfuQe",
+		})
+	})
 	port := ":" + os.Getenv("GOHW_PORT")
 
-	r.Run(port) // listen and serve on 0.0.0.0:8080
+	if err := r.Run(port); err != nil {
+		log.Fatal(err)
+	}
 }
-
-
