@@ -19,7 +19,7 @@ func main() {
 			"secret": "AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGewQe",
 		})
 	})
-	r.GET("/test-duplicate", func(c *gin.Context) {
+	r.GET("/test-credential-leak", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"secret": "BIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGfuQe",
 		})
