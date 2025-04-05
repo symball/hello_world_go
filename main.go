@@ -21,7 +21,7 @@ func main() {
 	})
 	r.GET("/test-duplicate", func(c *gin.Context) {
 		c.JSON(200, gin.H{
-			"secret": "AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGfuQe",
+			"secret": "BIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGfuQe",
 		})
 	})
 	port := ":" + os.Getenv("GOHW_PORT")
