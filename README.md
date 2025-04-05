@@ -9,3 +9,7 @@ This is a standard Go program launched from `main.go`
 ```
 go run main.go
 ```
+
+## Notes
+
+* There is a purposeful fake secret leaked within main.go for the sake of checking Trufflehog works correctly
