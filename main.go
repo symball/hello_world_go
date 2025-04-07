@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func main() {
+func setupRouter() *gin.Engine {
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
@@ -24,6 +24,11 @@ func main() {
 			"secret": "BIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGfuQe",
 		})
 	})
+	return r
+}
+
+func main() {
+	r := setupRouter()
 	port := ":" + os.Getenv("GOHW_PORT")
 
 	if err := r.Run(port); err != nil {
